@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className='dark:bg-gray-900 text-gray-900 dark:text-white fixed w-full top-0 z-50 shadow'
+      className='bg-white dark:bg-gray-900 text-gray-900 dark:text-white fixed w-full top-0 z-50 shadow'
     >
 
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -30,9 +30,9 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 items-center">
           <a href="#home" className="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+          <a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400">About</a>
           <a href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
           <a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
-          <a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400">About</a>
           <a href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
 
           {/* Icons */}
