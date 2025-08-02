@@ -1,22 +1,21 @@
 
 import logoLight from '../assets/logo_light.png';
 import logoDark from '../assets/logo_dark.png';
+import { useTheme } from "../context/ThemeContext";
 
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X, Github, Linkedin } from "lucide-react";
 
-export default function Navbar({darkMode,setDarkMode}) {
+export default function Navbar() {
   
   const [menuOpen, setMenuOpen] = useState(false);
+  const { darkMode, toggleTheme } = useTheme();
 
-
-  const toggleDarkMode = () => setDarkMode(!darkMode);
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-300 shadow "py-4"}
-    bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
+      className='dark:bg-gray-900 text-gray-900 dark:text-white fixed w-full top-0 z-50 shadow'
     >
 
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -40,14 +39,14 @@ export default function Navbar({darkMode,setDarkMode}) {
           
 
           {/* Dark Mode Toggle */}
-          <button onClick={toggleDarkMode} className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+          <button onClick={toggleTheme} className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-3">
-          <button onClick={toggleDarkMode}>
+          <button onClick={toggleTheme}>
             {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
           <button onClick={toggleMenu}>

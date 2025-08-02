@@ -1,5 +1,4 @@
-import { useState,useEffect} from 'react'
-import './App.css'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
@@ -12,33 +11,41 @@ import ScrollToTop from './components/Scrolltop'
 
 
 function App() {
-   const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) return saved === "light";
-    return true; // default
-  });
+  const [darkMode, setDarkMode] = useState(false);
 
+  // Optional: persist theme in localStorage and apply on mount
   useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-      // localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      // localStorage.setItem("theme", "light");
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
     }
   }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (!darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
   return (
     <>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
-      <Home darkMode={darkMode}/>
-      <About/>
-      <Projects/>
-      <Skills/>
-      <Contact/>
-      <Footer/>
-      <ScrollToTop/>
-     </>
+      <main className="bg-white dark:bg-gray-900 transition-colors duration-500">
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Home darkMode={darkMode} />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
+      </main>
+    </>
   )
 }
 

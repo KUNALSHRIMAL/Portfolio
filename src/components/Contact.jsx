@@ -35,8 +35,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen py-25 px-6 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 text-gray-900 dark:text-white"
+      className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] py-8 sm:py-10 md:py-12 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 text-gray-900 dark:text-white"
     >
+
+
+
       <div className="max-w-3xl mx-auto">
         {/* Heading */}
         <motion.h2
@@ -68,10 +71,9 @@ export default function Contact() {
               placeholder="Your Name"
               className={`peer w-full px-4 py-3 rounded-lg border bg-white dark:bg-gray-900 
                 placeholder-transparent transition-all focus:outline-none 
-                focus:ring-2 focus:ring-blue-500 ${
-                  errors.name
-                    ? "border-red-500"
-                    : "border-gray-300 dark:border-gray-600"
+                focus:ring-2 focus:ring-blue-500 ${errors.name
+                  ? "border-red-500"
+                  : "border-gray-300 dark:border-gray-600"
                 }`}
             />
             <label
@@ -95,10 +97,9 @@ export default function Contact() {
               placeholder="you@example.com"
               className={`peer w-full px-4 py-3 rounded-lg border bg-white dark:bg-gray-900 
                 placeholder-transparent transition-all focus:outline-none 
-                focus:ring-2 focus:ring-blue-500 ${
-                  errors.email
-                    ? "border-red-500"
-                    : "border-gray-300 dark:border-gray-600"
+                focus:ring-2 focus:ring-blue-500 ${errors.email
+                  ? "border-red-500"
+                  : "border-gray-300 dark:border-gray-600"
                 }`}
             />
             <label
@@ -122,10 +123,9 @@ export default function Contact() {
               placeholder="Your Message"
               className={`peer w-full px-4 py-3 rounded-lg border bg-white dark:bg-gray-900 
                 placeholder-transparent transition-all focus:outline-none 
-                focus:ring-2 focus:ring-blue-500 ${
-                  errors.message
-                    ? "border-red-500"
-                    : "border-gray-300 dark:border-gray-600"
+                focus:ring-2 focus:ring-blue-500 ${errors.message
+                  ? "border-red-500"
+                  : "border-gray-300 dark:border-gray-600"
                 }`}
             ></textarea>
             <label

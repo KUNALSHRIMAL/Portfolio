@@ -1,9 +1,16 @@
-module.exports = {
-  darkMode: 'class', // ✅ Important!
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        playfair: ['"Playfair Display"', 'serif'], // 👈 Added custom font
+      },
+    },
   },
   plugins: [],
-}
-
+};

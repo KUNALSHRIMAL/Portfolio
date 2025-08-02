@@ -1,11 +1,21 @@
 import { motion } from "framer-motion";
 import logoDark from "../assets/logo_dark.png"
 import logoLight from "../assets/logo_light.png"
+import { useEffect } from 'react'
 import cv from "../assets/kunal_shrimal.pdf"
+import { useTheme } from "../context/ThemeContext";
 
-const darkMode=true
-export default function Home({darkMode}) {
-  
+export default function Home() {
+  const { darkMode } = useTheme();
+
+  useEffect(() => {
+    const imgLight = new Image();
+    const imgDark = new Image();
+    imgLight.src = logoLight;
+    imgDark.src = logoDark;
+  }, []);
+
+
   return (
     <section
       id="home"
@@ -13,19 +23,11 @@ export default function Home({darkMode}) {
       bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950
       text-gray-900 dark:text-white transition-colors duration-300"
     >
-      {/* Left: Animated Logo */}
-      <motion.div
-        className="w-full lg:w-1/2 flex justify-center"
-        initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-        animate={{ opacity: 1, scale: 1, rotate: 0 }}
-        transition={{ duration: 0.8 }}
-      >
         <img
           src={darkMode ? logoDark : logoLight}
           alt="Kunal Logo"
           className="w-56 h-56 sm:w-64 sm:h-64 object-contain drop-shadow-md"
         />
-      </motion.div>
 
       {/* Right: Text Content */}
       <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
