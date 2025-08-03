@@ -2,7 +2,7 @@
 
 Welcome to my personal developer portfolio — a fast, modern, and responsive site built using **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**. It showcases my projects, skills in full-stack development and data analysis, and serves as a place to connect with me.
 
-![Demo Screenshot](./src/assets/cover.png) <!-- Replace with an actual screenshot path -->
+![Demo Screenshot](<img width="1911" height="862" alt="Portfolio" src="https://github.com/user-attachments/assets/46168a1c-a743-42d8-8baf-46cd6cb6093a" />) <!-- Replace with an actual screenshot path -->
 
 ---
 
@@ -46,7 +46,7 @@ src/
 
 ## 🧪 Live Demo
 
-Coming soon... (You can deploy on **Vercel**, **Netlify**, or **GitHub Pages**)
+https://kunalshrimal.github.io/Portfolio/
 
 ---
 
@@ -54,7 +54,9 @@ Coming soon... (You can deploy on **Vercel**, **Netlify**, or **GitHub Pages**)
 
 | Light Mode | Dark Mode |
 |------------|-----------|
-| ![Light](./src/assets/light.png) | ![Dark](./src/assets/dark.png) |
+| <img width="1917" height="863" alt="Screenshot 2025-08-02 191356" src="https://github.com/user-attachments/assets/06da7455-1ff5-40cf-b854-6e77599bf6db" />
+ | <img width="1911" height="862" alt="Portfolio" src="https://github.com/user-attachments/assets/46168a1c-a743-42d8-8baf-46cd6cb6093a" />
+ |
 
 ---
 
