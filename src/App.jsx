@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -42,8 +41,6 @@ function App() {
 
   return (
     <>
-      {/* SEO Meta Tags */}
-      <Helmet>
         <title>Kunal Shrimal | Full Stack Developer & Data Analyst</title>
         <meta
           name="description"
@@ -69,7 +66,6 @@ function App() {
         <meta name="twitter:title" content="Kunal Shrimal | Portfolio" />
         <meta name="twitter:description" content="Explore Kunal's projects and skills as a developer and analyst." />
         <meta name="twitter:image" content="https://kunalshrimal.github.io/Portfolio/preview.jpg" />
-      </Helmet>
 
       {/* Main Site */}
       <main className="bg-white dark:bg-gray-900 transition-colors duration-500">
