@@ -1,60 +1,73 @@
 <!doctype html>
 <html lang="en">
-
 <head>
+  <!-- Charset -->
   <meta charset="UTF-8" />
 
   <!-- Mobile Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/Portfolio/logo_dark.png" />
 
-  <!-- Primary Meta Tags -->
+  <!-- ===================== -->
+  <!-- Primary SEO Meta Tags -->
+  <!-- ===================== -->
   <title>Kunal Shrimal | Full Stack Developer & Data Analyst</title>
+
   <meta name="title" content="Kunal Shrimal | Full Stack Developer & Data Analyst" />
-  <meta name="description"
-    content="Hi, I'm Kunal – a Full Stack Developer and Data Analyst creating dynamic websites and powerful dashboards." />
-  <meta name="keywords"
-    content="Kunal Shrimal, web developer, data analyst, portfolio, react developer, python, django, power bi, full stack" />
+  <meta
+    name="description"
+    content="Kunal Shrimal is a Full Stack Developer and Data Analyst skilled in React, Django, APIs, SQL, and Power BI. Explore real-world projects, dashboards, and case studies."
+  />
+  <meta
+    name="keywords"
+    content="Kunal Shrimal, Full Stack Developer, React Developer, Django Developer, Data Analyst, Portfolio Website, Web Developer India"
+  />
   <meta name="author" content="Kunal Shrimal" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kunalshrimal.github.io/Portfolio/" />
+
+  <!-- ===================== -->
+  <!-- Open Graph (LinkedIn / WhatsApp) -->
+  <!-- ===================== -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kunalshrimal.github.io/Portfolio/" />
   <meta property="og:title" content="Kunal Shrimal | Full Stack Developer & Data Analyst" />
-  <meta property="og:description"
-    content="Explore my projects and skills in full stack development and data analytics." />
+  <meta
+    property="og:description"
+    content="Explore full stack projects, dashboards, APIs, and real-world case studies by Kunal Shrimal."
+  />
   <meta property="og:image" content="https://kunalshrimal.github.io/Portfolio/preview.jpg" />
 
-  <!-- Twitter -->
+  <!-- ===================== -->
+  <!-- Twitter Card -->
+  <!-- ===================== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://kunalshrimal.github.io/Portfolio/" />
   <meta name="twitter:title" content="Kunal Shrimal | Full Stack Developer & Data Analyst" />
-  <meta name="twitter:description"
-    content="Explore my projects and skills in full stack development and data analytics." />
+  <meta
+    name="twitter:description"
+    content="Full Stack Developer portfolio showcasing React, Django, APIs, and Data Analytics projects."
+  />
   <meta name="twitter:image" content="https://kunalshrimal.github.io/Portfolio/preview.jpg" />
 
-  <!-- Preload Assets for Performance -->
-  <!-- update -->
-  <link rel="preload" as="image" href="/src/assets/logo_dark.png" />
-  <link rel="preload" as="image" href="/src/assets/logo_light.png" />
+  <!-- ===================== -->
+  <!-- Performance Optimizations -->
+  <!-- ===================== -->
 
-  <!-- Optional: Font Preconnect -->
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+  <!-- Preload Critical Images -->
+  <link rel="preload" as="image" href="/Portfolio/logo_dark.png" />
+  <link rel="preload" as="image" href="/Portfolio/logo_light.png" />
+
 </head>
 
 <body>
   <div id="root"></div>
-  <!-- <script type="module" src="/Portfolio/src/main.jsx"></script> -->
-  <!-- index.html: change this -->
-  <!-- <script type="module" src="/Portfolio/src/main.jsx"></script> -->
 
-  <!-- to this -->
-  <script type="module" src="/src/main.jsx"></script>
-
+  <!-- IMPORTANT: path must respect Vite base (/Portfolio/) -->
+  <script type="module" src="src/main.jsx"></script>
 </body>
-
 </html>

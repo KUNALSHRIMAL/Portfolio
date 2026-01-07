@@ -3,58 +3,52 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
-    name: "Ram Tent And Events",
+    name: "Ram Tent & Events",
     category: "Web Development",
     image: "./images/ramtent.png",
     video: "./videos/ramtent.mp4",
+    description: "Business website with dynamic pages and contact workflow.",
+    tech: ["React", "Django", "REST API"],
   },
   {
     name: "Personal Portfolio",
     category: "Web Development",
     image: "./images/Portfolio.png",
     video: "./videos/portfolio.mp4",
+    description: "Animated developer portfolio built with React & Framer Motion.",
+    tech: ["React", "Tailwind", "Framer Motion"],
   },
   {
-    name: "Student management",
+    name: "Student Management System",
     category: "Web Development",
     image: "./images/hdfc.png",
     video: "./videos/HDFC.mp4",
+    description: "CRUD-based system with authentication and database integration.",
+    tech: ["PHP", "MySQL", "Bootstrap"],
   },
   {
-    name: "Canteen management",
+    name: "Canteen Management System",
     category: "Web Development",
     image: "./images/piet.png",
     video: "./videos/PIET.mp4",
-  },
-  {
-    name: "Jhulelal ice cream parlour",
-    category: "Web Development",
-    image: "./images/julelal.png",
-    video: "./videos/julelal.mp4",
+    description: "Online ordering & payment-enabled canteen system.",
+    tech: ["Django", "MySQL", "Payment Gateway"],
   },
   {
     name: "Blinkit Data Analytics",
     category: "Data Analyst",
     image: "./images/blinkit.png",
     video: "./videos/blinkit.mp4",
+    description: "Sales & operations dashboard with business insights.",
+    tech: ["Python", "SQL", "Power BI"],
   },
   {
-    name: "Credit card transaction Analytics",
+    name: "Credit Card Transaction Analysis",
     category: "Data Analyst",
     image: "./images/credit.png",
     video: "./videos/credit.mp4",
-  },
-  {
-    name: "E commerce Analysis",
-    category: "Data Analyst",
-    image: "./images/sales.png",
-    video: "./videos/sales.mp4",
-  },
-  {
-    name: "Capstone Sales Analysis",
-    category: "Data Analyst",
-    image: "./images/salespy.png",
-    video: "./videos/salespy.mp4",
+    description: "Fraud & spending pattern analysis using real datasets.",
+    tech: ["Python", "Pandas", "SQL"],
   },
 ];
 
@@ -65,82 +59,104 @@ export default function Projects() {
   const filteredProjects =
     filter === "All"
       ? projects
-      : projects.filter((project) => project.category === filter);
+      : projects.filter((p) => p.category === filter);
 
   return (
     <section
       id="projects"
-      className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-20 px-6"
+      className="min-h-screen py-20 px-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Title */}
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
         <motion.h2
-          className="text-4xl font-bold mb-4 text-blue-600 dark:text-blue-400"
+          className="text-4xl font-bold mb-4 text-center text-blue-600 dark:text-blue-400"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          My Projects
+          Projects
         </motion.h2>
+
         <motion.p
-          className="mb-8 text-gray-600 dark:text-gray-400"
+          className="text-center mb-10 text-gray-600 dark:text-gray-400"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
         >
-          Hover or tap to preview
+          Real-world projects showcasing full stack & analytics skills
         </motion.p>
 
-        {/* Filter Navbar */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
+        {/* Filters */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {["All", "Web Development", "Data Analyst"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-4 py-2 rounded-full font-medium border transition ${
+              className={`px-4 py-2 rounded-full border transition ${
                 filter === cat
                   ? "bg-blue-600 text-white border-blue-600"
-                  : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
-              } hover:scale-105`}
+                  : "bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600"
+              }`}
             >
               {cat}
             </button>
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.name}
-                className="relative group overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-800 transition-all duration-300"
+                layout
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.4 }}
+                className="group bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl overflow-hidden"
                 onMouseEnter={() => setActiveVideo(index)}
                 onMouseLeave={() => setActiveVideo(null)}
                 onClick={() => setActiveVideo(index)}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
               >
+                {/* Media */}
                 {activeVideo === index ? (
                   <video
                     src={project.video}
                     autoPlay
                     muted
                     loop
-                    className="w-full h-64 object-fill"
+                    className="w-full h-52 object-cover"
                   />
                 ) : (
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-64 object-fill"
+                    className="w-full h-52 object-cover"
                   />
                 )}
-                <div className="absolute bottom-0 bg-black bg-opacity-60 text-white w-full text-center py-2 font-semibold text-sm sm:text-base">
-                  {project.name}
+
+                {/* Content */}
+                <div className="p-5 text-left">
+                  <h3 className="text-lg font-semibold mb-1">
+                    {project.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs px-2 py-1 rounded bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
