@@ -61,7 +61,7 @@ export default function Skills() {
             key={skill.name}
             variants={item}
             whileHover={{ y: -6, scale: 1.1 }}
-            className="flex flex-col items-center gap-2 cursor-pointer"
+            className="flex flex-col items-center gap-2 "
           >
             <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 shadow">
               <img src={skill.svg} alt={skill.name} className="w-8 h-8" />

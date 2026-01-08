@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import logoDark from "../assets/logo_dark.png";
 import logoLight from "../assets/logo_light.png";
+import heroDarkVideo from "../assets/hero-bg.mp4";
+import heroLightVideo from "../assets/hero-bg.mp4";
 import { useEffect, useState } from "react";
 import cv from "../assets/kunal_shrimal.pdf";
 import { useTheme } from "../context/ThemeContext";
@@ -24,14 +26,14 @@ export default function Home() {
         setDisplayText(text.slice(0, index - 1));
         setIndex(index - 1);
       } else if (!isDeleting && index === text.length) {
-        setTimeout(() => setIsDeleting(true), 1000);
+        setTimeout(() => setIsDeleting(true), 1200);
       } else if (isDeleting && index === 0) {
         setIsDeleting(false);
       }
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [index, isDeleting, text]);
+  }, [index, isDeleting]);
 
   // 🔹 Preload logos
   useEffect(() => {
@@ -44,17 +46,32 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col lg:flex-row items-center justify-center
-      px-6 py-12 gap-12
-      bg-gradient-to-b from-white to-gray-100
-      dark:from-gray-900 dark:to-gray-950
-      text-gray-900 dark:text-white"
+      className="relative min-h-screen flex flex-col lg:flex-row
+      items-center justify-center px-6 py-12 gap-12
+      text-gray-900 dark:text-white overflow-hidden"
     >
+      {/* 🎥 Background Video */}
+      <video
+        key={darkMode ? "dark-video" : "light-video"}
+        className="absolute inset-0 w-full h-full object-cover z-0 "
+        src={darkMode ? heroDarkVideo : heroLightVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Overlay */}
+      <div
+        className={`absolute inset-0 z-10 ${darkMode ? "bg-black/60" : "bg-white/80"
+          }`}
+      />
+
       {/* Logo */}
       <motion.img
         src={darkMode ? logoDark : logoLight}
-        alt="Kunal Logo"
-        className="w-56 h-56 sm:w-64 sm:h-64 object-contain drop-shadow-xl"
+        alt="Kunal Shrimal Full Stack Developer Logo"
+        className="relative z-20 w-56 h-56 sm:w-64 sm:h-64 object-contain drop-shadow-xl"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
@@ -63,34 +80,34 @@ export default function Home() {
 
       {/* Hero Content */}
       <motion.div
-        className="w-full lg:w-1/2 flex flex-col items-center
-        lg:items-start text-center lg:text-left"
+        className="relative z-20 w-full lg:w-1/2 flex flex-col
+        items-center lg:items-start text-center lg:text-left"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         {/* Name */}
         <motion.h1
-          className="text-4xl sm:text-5xl font-extrabold mb-4"
+          className="text-4xl sm:text-5xl font-extrabold mb-4 text-white"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          Hi, I’m{" "}
-          <span className="text-blue-600 dark:text-blue-400">
+          <span className="text-blue-400">Hi, I’m{" "}</span>
+          <span className="text-gray-500 dark:text-gray-200">
             Kunal Shrimal
           </span>
         </motion.h1>
 
-        {/* 🔥 LOOPING TYPING ROLE */}
+        {/* Typing Role */}
         <motion.h2
           className="text-xl sm:text-2xl font-semibold mb-4
-          text-blue-600 dark:text-blue-400 min-h-[32px]"
+          text-blue-400 min-h-[32px]"
         >
           {displayText}
           <motion.span
             className="ml-1"
             animate={{ opacity: [0, 1, 0] }}
-            transition={{ repeat: Infinity, duration: 1 }}
+            transition={{ repeat: Infinity, duration: 3 }}
           >
             |
           </motion.span>
@@ -99,7 +116,7 @@ export default function Home() {
         {/* Description */}
         <motion.p
           className="max-w-2xl text-base sm:text-lg mb-8
-          text-gray-600 dark:text-gray-400"
+          text-gray-500  dark:text-gray-200"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -119,8 +136,8 @@ export default function Home() {
             href={cv}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-blue-600 text-white rounded-full
-            hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition"
+            className="px-6 py-3 bg-blue-600  text-black  dark:text-gray-200 rounded-full
+            hover:bg-blue-700 transition"
           >
             View Resume
           </motion.a>
@@ -129,9 +146,8 @@ export default function Home() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 border border-blue-600 text-blue-600
-            rounded-full hover:bg-blue-50 dark:text-blue-400
-            dark:border-blue-400 dark:hover:bg-blue-800 transition"
+            className="px-6 py-3 border border-blue-400 text-black dark:text-blue-300
+            rounded-full hover:bg-blue-500/20 transition"
           >
             Contact Me
           </motion.a>
@@ -139,7 +155,7 @@ export default function Home() {
 
         {/* Scroll Hint */}
         <motion.div
-          className="mt-12 text-sm text-gray-500 dark:text-gray-400"
+          className="mt-12 text-sm text-gray-300"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >

@@ -8,7 +8,7 @@ const projects = [
     image: "./images/ramtent.png",
     video: "./videos/ramtent.mp4",
     description: "Business website with dynamic pages and contact workflow.",
-    tech: ["React", "Django", "REST API"],
+    tech: ["React", "Vite", "Tailwind"],
   },
   {
     name: "Personal Portfolio",
@@ -32,7 +32,7 @@ const projects = [
     image: "./images/piet.png",
     video: "./videos/PIET.mp4",
     description: "Online ordering & payment-enabled canteen system.",
-    tech: ["Django", "MySQL", "Payment Gateway"],
+    tech: ["PHP", "MySQL", "Payment Gateway"],
   },
   {
     name: "Blinkit Data Analytics",
