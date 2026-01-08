@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import logoDark from "../assets/logo_dark.png";
 import logoLight from "../assets/logo_light.png";
 import heroDarkVideo from "../assets/hero-bg.mp4";
-import heroLightVideo from "../assets/hero-bg.mp4";
+import heroLightVideo from "../assets/hero-bg-light.mp4";
 import { useEffect, useState } from "react";
 import cv from "../assets/kunal_shrimal.pdf";
 import { useTheme } from "../context/ThemeContext";
@@ -63,8 +63,7 @@ export default function Home() {
 
       {/* Overlay */}
       <div
-        className={`absolute inset-0 z-10 ${darkMode ? "bg-black/60" : "bg-white/80"
-          }`}
+        className={` ${darkMode ? "absolute inset-0 z-10 bg-black/60" : "hidden" }`}
       />
 
       {/* Logo */}
@@ -93,7 +92,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
         >
           <span className="text-blue-400">Hi, I’m{" "}</span>
-          <span className="text-gray-500 dark:text-gray-200">
+          <span className="text-gray-600 dark:text-gray-200">
             Kunal Shrimal
           </span>
         </motion.h1>
@@ -116,7 +115,7 @@ export default function Home() {
         {/* Description */}
         <motion.p
           className="max-w-2xl text-base sm:text-lg mb-8
-          text-gray-500  dark:text-gray-200"
+          text-gray-600  dark:text-gray-200"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -136,7 +135,7 @@ export default function Home() {
             href={cv}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-blue-600  text-black  dark:text-gray-200 rounded-full
+            className="px-6 py-3 bg-blue-600  text-black dark:text-gray-200 rounded-full
             hover:bg-blue-700 transition"
           >
             View Resume
@@ -146,7 +145,7 @@ export default function Home() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 border border-blue-400 text-black dark:text-blue-300
+            className="px-6 py-3 border border-blue-500 text-black dark:text-blue-300
             rounded-full hover:bg-blue-500/20 transition"
           >
             Contact Me

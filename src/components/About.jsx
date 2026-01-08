@@ -34,7 +34,7 @@ export default function About() {
           About Me
         </motion.h2>
 
-        {/* Intro */}
+        {/* Intro (FULL STACK POSITIONING) */}
         <motion.p
           className="max-w-3xl mx-auto text-lg text-center mb-14
           text-gray-700 dark:text-gray-300"
@@ -43,10 +43,11 @@ export default function About() {
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
         >
-          I’m <strong>Kunal</strong>, a <strong>Full Stack Developer</strong> with a
-          strong interest in <strong>Data Analytics</strong>. I enjoy building
-          scalable web applications, APIs, and dashboards that solve real-world
-          problems.
+          I’m <strong>Kunal</strong>, a <strong>Full Stack Developer</strong> who
+          enjoys building complete web applications — from designing responsive
+          user interfaces to developing backend APIs and working with databases.
+          I focus on writing clean, scalable code and solving real-world problems
+          through end-to-end solutions.
         </motion.p>
 
         {/* Cards */}
@@ -57,59 +58,70 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
         >
+          {/* Frontend */}
           <motion.div
             variants={item}
             whileHover={{ y: -6 }}
-            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+            className="bg-white dark:bg-gray-800 p-6 rounded-2xl
+            shadow-md hover:shadow-xl transition"
           >
             <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              🚀 Full Stack Development
+              🎨 Frontend Engineering
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
-              Building responsive frontend interfaces and robust backend systems
-              using React, Django, REST APIs, and modern web technologies.
+              Crafting responsive and interactive user interfaces using React,
+              Tailwind CSS, and modern JavaScript, with a strong focus on
+              performance and user experience.
             </p>
           </motion.div>
 
+          {/* Backend */}
           <motion.div
             variants={item}
             whileHover={{ y: -6 }}
-            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+            className="bg-white dark:bg-gray-800 p-6 rounded-2xl
+            shadow-md hover:shadow-xl transition"
           >
             <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              📊 Data Analytics
+              ⚙️ Backend & APIs
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
-              Transforming raw data into actionable insights using Python, SQL,
-              Power BI, and interactive dashboards.
+              Designing and building backend systems using Django, PHP, and REST
+              APIs, handling authentication, business logic, and secure data
+              flow.
             </p>
           </motion.div>
 
+          {/* Database */}
           <motion.div
             variants={item}
             whileHover={{ y: -6 }}
-            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+            className="bg-white dark:bg-gray-800 p-6 rounded-2xl
+            shadow-md hover:shadow-xl transition"
           >
             <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              🎯 Career Goal
+              🗄️ Databases & Data Handling
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
-              To work as a Full Stack Developer where I can combine problem-
-              solving, system design, and data-driven thinking.
+              Working with relational databases like MySQL and writing efficient
+              SQL queries to manage, optimize, and analyze application data.
             </p>
           </motion.div>
 
+          {/* Engineering Mindset */}
           <motion.div
             variants={item}
             whileHover={{ y: -6 }}
-            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+            className="bg-white dark:bg-gray-800 p-6 rounded-2xl
+            shadow-md hover:shadow-xl transition"
           >
             <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              💡 Learning & Growth
+              🧠 Engineering Mindset
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
-              Continuously improving skills in Angular, Next.js, advanced SQL,
-              and backend architecture.
+              I approach development with a problem-solving mindset — breaking
+              down requirements, designing systems, and continuously improving
+              code quality, scalability, and maintainability.
             </p>
           </motion.div>
         </motion.div>
