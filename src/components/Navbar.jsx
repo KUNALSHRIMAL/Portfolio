@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { darkMode, toggleTheme } = useTheme();
+  const { darkMode, toggleTheme } = useTheme(true);
 
   const navItem = {
     hidden: { opacity: 0, y: -10 },
