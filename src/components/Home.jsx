@@ -11,29 +11,39 @@ export default function Home() {
   const { darkMode } = useTheme();
 
   // 🔹 Typing animation states
-  const text = "Full Stack Developer";
+const texts = [
+  "Full Stack Developer",
+  // "Shopify Developer"
+];
+const [textIndex, setTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const typingSpeed = isDeleting ? 40 : 80;
-    const timeout = setTimeout(() => {
-      if (!isDeleting && index < text.length) {
-        setDisplayText(text.slice(0, index + 1));
-        setIndex(index + 1);
-      } else if (isDeleting && index > 0) {
-        setDisplayText(text.slice(0, index - 1));
-        setIndex(index - 1);
-      } else if (!isDeleting && index === text.length) {
-        setTimeout(() => setIsDeleting(true), 1200);
-      } else if (isDeleting && index === 0) {
-        setIsDeleting(false);
-      }
-    }, typingSpeed);
+  const currentText = texts[textIndex];
+  const typingSpeed = isDeleting ? 40 : 80;
 
-    return () => clearTimeout(timeout);
-  }, [index, isDeleting]);
+  const timeout = setTimeout(() => {
+    if (!isDeleting && index < currentText.length) {
+      setDisplayText(currentText.slice(0, index + 1));
+      setIndex(index + 1);
+    } 
+    else if (isDeleting && index > 0) {
+      setDisplayText(currentText.slice(0, index - 1));
+      setIndex(index - 1);
+    } 
+    else if (!isDeleting && index === currentText.length) {
+      setTimeout(() => setIsDeleting(true), 1200);
+    } 
+    else if (isDeleting && index === 0) {
+      setIsDeleting(false);
+      setTextIndex((prev) => (prev + 1) % texts.length); // 🔥 switch text
+    }
+  }, typingSpeed);
+
+  return () => clearTimeout(timeout);
+}, [index, isDeleting, textIndex]);
 
   // 🔹 Preload logos
   useEffect(() => {

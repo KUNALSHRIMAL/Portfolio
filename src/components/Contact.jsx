@@ -183,7 +183,13 @@ export default function Contact() {
               px-8 py-3 rounded-xl transition"
             >
               {state.submitting ? "Sending..." : "Send Message"}
-              <SendHorizonal size={18} />
+              <lord-icon
+                src="https://cdn.lordicon.com/vpbspaec.json"
+                trigger="loop"
+                state="loop-flying"
+                colors="primary:#ffffff,secondary:#66d7ee"
+                style={{width:"35px",height:"35px"}}>
+              </lord-icon>
             </motion.button>
           </motion.form>
         )}

@@ -31,33 +31,51 @@ export default function Footer() {
 
         {/* Social Icons */}
         <div className="flex justify-center gap-6 mb-8">
+
+          {/* GitHub */}
           <motion.a
             href="https://github.com/KUNALSHRIMAL"
             target="_blank"
             rel="noopener noreferrer"
             {...socialHover}
-            className="hover:text-blue-600 dark:hover:text-blue-400"
           >
-            <Github size={20} />
+            <lord-icon
+              src="https://cdn.lordicon.com/jjxzcivr.json"
+
+              trigger="hover"
+              colors="primary:#3,secondary:#2563eb"
+              style={{ width: "3rem", height: "3rem" }}
+            ></lord-icon>
           </motion.a>
 
+          {/* LinkedIn */}
           <motion.a
             href="https://www.linkedin.com/in/kunalshrimal"
             target="_blank"
             rel="noopener noreferrer"
             {...socialHover}
-            className="hover:text-blue-600 dark:hover:text-blue-400"
           >
-            <Linkedin size={20} />
+            <lord-icon
+              src="https://cdn.lordicon.com/qgebwute.json"
+              trigger="hover"
+              colors="primary:#2563eb,secondary:#2563eb"
+              style={{ width: "2rem", height: "3rem" }}
+            ></lord-icon>
           </motion.a>
 
+          {/* Email */}
           <motion.a
             href="mailto:2019pietcskunal86@gmail.com"
             {...socialHover}
-            className="hover:text-blue-600 dark:hover:text-blue-400"
           >
-            <Mail size={20} />
+            <lord-icon
+              src="https://cdn.lordicon.com/rhvddzym.json"
+              trigger="hover"
+              colors="primary:#2563eb,secondary:#66d7ee"
+              style={{ width: "3rem", height: "3rem" }}
+            ></lord-icon>
           </motion.a>
+
         </div>
 
         {/* Navigation */}

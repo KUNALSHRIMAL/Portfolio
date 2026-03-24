@@ -15,7 +15,7 @@ const item = {
 
 export default function Skills() {
   const frontend = [
-    { name: "HTML", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "HTML", svg: "https://cdn.lordicon.com/yvaxaowk.json" },
     { name: "CSS", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
     { name: "JavaScript", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
     { name: "React", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -25,13 +25,13 @@ export default function Skills() {
 
   const backend = [
     { name: "Django", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
-    { name: "PHP", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
-    { name: "REST APIs", svg: "https://cdn-icons-png.flaticon.com/512/919/919825.png" }
+    { name: "PHP", svg: "https://cdn.lordicon.com/keldjfda.json" },
+    { name: "REST APIs", svg: "https://cdn.lordicon.com/nfuackpv.json" }
   ];
 
   const data = [
-    { name: "Python", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-    { name: "SQL", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "Python", svg: "https://cdn.lordicon.com/mweirtfp.json" },
+    { name: "SQL", svg: "https://cdn.lordicon.com/xqdfobxg.json" },
     { name: "Pandas", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
     { name: "NumPy", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
     { name: "Power BI", svg: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" },
@@ -39,10 +39,10 @@ export default function Skills() {
   ];
 
   const tools = [
-    { name: "Git & GitHub", svg: "https://www.svgrepo.com/show/303615/github-icon-1-logo.svg" },
+    { name: "Git & GitHub", svg: "https://cdn.lordicon.com/jjxzcivr.json" },
     { name: "MySQL", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "VS Code", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-    { name: "Google Colab", svg: colabsvg },
+    { name: "Google Colab", svg: "https://cdn.lordicon.com/smafogdu.json" },
     { name: "Linux", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
   ];
 
@@ -64,7 +64,16 @@ export default function Skills() {
             className="flex flex-col items-center gap-2 "
           >
             <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 shadow">
-              <img src={skill.svg} alt={skill.name} className="w-8 h-8" />
+              {skill.svg.endsWith(".json") ? (
+                <lord-icon
+                  src={skill.svg}
+                  trigger="hover"
+                  colors="primary:#b4b4b4,secondary:#2563eb"
+                  style={{ width: "3rem", height: "3rem" }}
+                ></lord-icon>
+              ) : (
+                <img src={skill.svg} alt={skill.name} className="w-8 h-8" />
+              )}
             </div>
             <span className="text-sm text-center">{skill.name}</span>
           </motion.div>

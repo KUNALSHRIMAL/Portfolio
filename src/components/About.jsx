@@ -65,9 +65,18 @@ export default function About() {
             className="bg-white dark:bg-gray-800 p-6 rounded-2xl
             shadow-md hover:shadow-xl transition"
           >
-            <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              🎨 Frontend Engineering
-            </h3>
+            <div className="flex items-center gap-2 mb-3">
+              <lord-icon
+                src="https://cdn.lordicon.com/gvtjlyjf.json"
+                trigger="hover"
+                colors="primary:#2563eb,secondary:#d9d9d9"
+                style={{ width: "24px", height: "24px" }}
+              ></lord-icon>
+
+              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                Frontend Engineering
+              </h3>
+            </div>
             <p className="text-gray-700 dark:text-gray-300">
               Crafting responsive and interactive user interfaces using React,
               Tailwind CSS, and modern JavaScript, with a strong focus on
@@ -82,8 +91,15 @@ export default function About() {
             className="bg-white dark:bg-gray-800 p-6 rounded-2xl
             shadow-md hover:shadow-xl transition"
           >
+
             <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              ⚙️ Backend & APIs
+              <lord-icon
+                src="https://cdn.lordicon.com/nfuackpv.json"
+                trigger="hover"
+                stroke="bold"
+                colors="primary:#b4b4b4,secondary:#2563eb"
+                style={{ width: "1.5rem", height: "1.5rem" }}>
+              </lord-icon> Backend & APIs
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
               Designing and building backend systems using Django, PHP, and REST
@@ -99,8 +115,13 @@ export default function About() {
             className="bg-white dark:bg-gray-800 p-6 rounded-2xl
             shadow-md hover:shadow-xl transition"
           >
-            <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              🗄️ Databases & Data Handling
+            <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400 align-middle">
+              <lord-icon
+                src="https://cdn.lordicon.com/xqdfobxg.json"
+                trigger="hover"
+                colors="primary:#2563eb,secondary:#b4b4b4"
+                style={{ width: "1.5rem", height: "1.5rem" }}>
+              </lord-icon> <span>Databases & Data Handling</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
               Working with relational databases like MySQL and writing efficient
@@ -116,7 +137,12 @@ export default function About() {
             shadow-md hover:shadow-xl transition"
           >
             <h3 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              🧠 Engineering Mindset
+              <lord-icon
+                src="https://cdn.lordicon.com/srupsmbe.json"
+                trigger="hover"
+                colors="primary:#2563eb,secondary:#b4b4b4"
+                style={{ width: "1.5rem", height: "1.5rem" }}>
+              </lord-icon> Engineering Mindset
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
               I approach development with a problem-solving mindset — breaking
